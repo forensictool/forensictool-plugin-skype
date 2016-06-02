@@ -1,0 +1,17 @@
+{
+    "name": "libcoex-plugin-task-skype-win",
+    "lib": "libcoex-plugin-task-skype-win.so",
+    "project": "coex-plugin-task-skype-win.pro",
+    "description": "Plugin search git repo in system",
+    "repository": "https://github.com/tusur-coex/coex-plugin-task-skypewin",
+    "version": {
+		"major": "0",
+		"minor": "1",
+		"build": "0"
+	},
+    "maintainer": {
+		"name": "Igor Polyakov",
+		"email": "fox.user.3@gmail.com"
+	},
+	"architecture": "amd64"
+}
