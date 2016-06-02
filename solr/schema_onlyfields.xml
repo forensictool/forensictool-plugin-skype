@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<schema name="gitrepo">
-	<!-- add 3 fields -->
-	<field name="gitrepo_url" type="text" indexed="true" stored="true"/>
-	<field name="gitrepo_path" type="text" indexed="true" stored="true"/>
-	<field name="gitrepo_other" type="text" indexed="true" stored="true"/>
+<schema name="skype-win">
+	<!-- add 20 fields -->
+    <field name="account_emails" type="text" indexed="true" stored="true"/>
+    <field name="account_fullName" type="text" indexed="true" stored="true"/>
+    <field name="account_ipcountry" type="text" indexed="true" stored="true"/>
+    <field name="account_name" type="text" indexed="true" stored="true"/>
+    <field name="call_client" type="text" indexed="true" stored="true"/>
+    <field name="call_duration" type="text" indexed="true" stored="true"/>
+    <field name="call_server" type="text" indexed="true" stored="true"/>
+    <field name="call_timestamp" type="text" indexed="true" stored="true"/>
+    <field name="contact_birthday" type="text" indexed="true" stored="true"/>
+    <field name="contact_city" type="text" indexed="true" stored="true"/>
+    <field name="contact_country" type="text" indexed="true" stored="true"/>
+    <field name="contact_fullName" type="text" indexed="true" stored="true"/>
+    <field name="contact_gender" type="text" indexed="true" stored="true"/>
+    <field name="contact_languages" type="text" indexed="true" stored="true"/>
+    <field name="contact_name" type="text" indexed="true" stored="true"/>
+    <field name="contact_phone" type="text" indexed="true" stored="true"/>
+    <field name="message_author" type="text" indexed="true" stored="true"/>
+    <field name="message_text" type="text" indexed="true" stored="true"/>
+    <field name="message_timestamp" type="text" indexed="true" stored="true"/>
 </schema>

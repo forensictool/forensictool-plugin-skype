@@ -1,20 +1,41 @@
 <add>
-	<doc>
-		<!-- Comment: id must be generated as bookmark_MD5(fullpath) -->
-		<field name="id">gitrepo_c0ee9eb3b28210b249dfda5cc8026980</field>
-		<field name="application">Git</field>
-		<field name="doc_type">gitrepo</field>
-		<field name="gitrepo_url">git@github.com:tusur-coex/coex.git</field>
-		<field name="gitrepo_path">/home/some/develop/tusur-coex/coex</field>
-		<field name="gitrepo_other">other information</field>
-	</doc>
-	<doc>
-		<!-- Comment: id must be generated as bookmark_MD5(fullpath) -->
-		<field name="id">gitrepo_c0ee9eb3b28210b249dfda5cc8026981</field>
-		<field name="application">Git</field>
-		<field name="doc_type">gitrepo</field>
-		<field name="gitrepo_url">git@github.com:tusur-coex/coex-core.git</field>
-		<field name="gitrepo_fullpath">/home/some/develop/tusur-coex/coex-core</field>
-		<field name="gitrepo_other">other information</field>
-	</doc>
+    <doc>
+        <field name="id">skype_be61d21d6737158aa03d1a2b180b8422</field>
+        <field name="application">skype</field>
+        <field name="doc_type">account</field>
+        <field name="account_name">fox.user.3</field>
+        <field name="account_fullName">Игорь</field>
+        <field name="account_emails">fox.user.3@gmail.ru</field>
+        <field name="account_ipcountry">ru</field>
+    </doc>
+    <doc>
+        <field name="id">skype_1fb6ffd68c07d64a91993d483ae4e15a</field>
+        <field name="application">skype</field>
+        <field name="doc_type">call</field>
+        <field name="call_timestamp">сб янв 19 22:01:01 2013</field>
+        <field name="call_duration"></field>
+        <field name="call_server">fox.user.3</field>
+        <field name="call_client"></field>
+    </doc>
+    <doc>
+        <field name="id">skype_148506fa95156090656b23c9bee1e6b7</field>
+        <field name="application">skype</field>
+        <field name="doc_type">contact</field>
+        <field name="contact_name">echo123</field>
+        <field name="contact_fullName">Echo / Sound Test Service</field>
+        <field name="contact_birthday"></field>
+        <field name="contact_phone"></field>
+        <field name="contact_gender">Unknow</field>
+        <field name="contact_languages">en</field>
+        <field name="contact_country"></field>
+        <field name="contact_city"></field>
+    </doc>
+    <doc>
+        <field name="id">skype_a71434bc567e7f57e88ae0e7e3a4614c</field>
+        <field name="application">skype</field>
+        <field name="doc_type">message</field>
+        <field name="message_author">sea-kg</field>
+        <field name="message_timestamp">пн дек 31 20:14:02 2012</field>
+        <field name="message_text">всех с новым годом!</field>
+    </doc>
 </add>
