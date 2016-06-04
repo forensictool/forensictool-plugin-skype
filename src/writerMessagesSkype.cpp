@@ -1,4 +1,5 @@
 #include "writerMessagesSkype.h"
+#include <QString>
 
 //constructor
 writerMessagesSkype::writerMessagesSkype(
@@ -57,7 +58,7 @@ void writerMessagesSkype::writeMessage(
 {
     if (!m_bOpened)return;
 
-    QString md5Id = QCryptographicHash::hash( (author+timestamp+body_xml).toAscii(), QCryptographicHash::Md5 ).toHex();
+    QString md5Id = QCryptographicHash::hash( (author+timestamp+body_xml).toLatin1(), QCryptographicHash::Md5 ).toHex();
     bool isconverted;
     uint iunixtime_integer = timestamp.toUInt(&isconverted);
     QString idatetime = QDateTime::fromTime_t(iunixtime_integer).toString();
@@ -86,7 +87,7 @@ void writerMessagesSkype::writeCalls(
     bool isconverted;
     uint iunixtime_integer = begin_timestamp.toUInt(&isconverted);
     QString idatetime = QDateTime::fromTime_t(iunixtime_integer).toString();
-    QString md5Id = QCryptographicHash::hash( (begin_timestamp+duration+host_identity+current_video_audience).toAscii(), QCryptographicHash::Md5 ).toHex();
+    QString md5Id = QCryptographicHash::hash( (begin_timestamp+duration+host_identity+current_video_audience).toLatin1(), QCryptographicHash::Md5 ).toHex();
 
     m_pXmlWriter->writeStartElement("doc");
 
@@ -117,7 +118,7 @@ void writerMessagesSkype::writeContacts(
 {
     if (!m_bOpened)return;
 
-    QString md5Id = QCryptographicHash::hash( (skypename+fullName+birthday+gender+phone_mobile+languages+country+city).toAscii(), QCryptographicHash::Md5 ).toHex();
+    QString md5Id = QCryptographicHash::hash( (skypename+fullName+birthday+gender+phone_mobile+languages+country+city).toLatin1(), QCryptographicHash::Md5 ).toHex();
     if (gender == "1")
         gender = "Male";
     else if (gender == "2")
@@ -150,7 +151,7 @@ void writerMessagesSkype::writeInfo(
 
 {
     if (!m_bOpened)return;
-    QString md5Id = QCryptographicHash::hash( (fullName+ipcountry+emails+fullName+skypeName).toAscii(), QCryptographicHash::Md5 ).toHex();
+    QString md5Id = QCryptographicHash::hash( (fullName+ipcountry+emails+fullName+skypeName).toLatin1(), QCryptographicHash::Md5 ).toHex();
     m_pXmlWriter->writeStartElement("doc");
 
     writeSkype_field("doc_type", "account");

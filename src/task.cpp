@@ -1,5 +1,6 @@
-#include "skypeWinTask.h"
+#include "task.h"
 #include "writerMessagesSkype.h"
+#include <QString>
 
 TaskSkypeWin::TaskSkypeWin() {
 	m_bDebug = false;
@@ -161,8 +162,4 @@ bool TaskSkypeWin::execute(const coex::IConfig *config) {
         }
 	}
     return true;
-}
-
-coex::ITask* createTask() {
-	return (coex::ITask*)(new TaskSkypeWin());
 }
