@@ -19,14 +19,14 @@ QT -= gui
 QT += sql
 CONFIG += dll
 SOURCES += \
-	src/skypeWinTask.cpp\
-	src/writerMessagesSkype.cpp
-
+	src/app.cpp\
+	src/task.cpp \
+	src/writerMessagesSkype.cpp \
 
 HEADERS += \
 	src/coex.h \
-	src/task.h
-	src/skypeWinTask.h\
-	src/writerMessagesSkype.h
+	src/task.h \
+	src/writerMessagesSkype.h \
+	
 
 
