@@ -22,8 +22,8 @@ QString TaskSkypeWin::description() {
 	return "Task is search logs of Skype for WINDOWS";
 };
 
-bool TaskSkypeWin::isSupportOS(const coex::ITypeOperationSystem *os) {
-    return (os->platform() == "Windows" && (os->version() == "XP" || os->version() == "7" || os->version() == "8"));
+bool TaskSkypeWin::isSupportOS(const coex::ITypeOperationSystem *) {
+    return true;
 };
 
 void TaskSkypeWin::setOption(QStringList options) {
@@ -45,7 +45,7 @@ bool TaskSkypeWin::execute(const coex::IConfig *config) {
     QDir dir(config->outputFolder());
     dir.mkdir("skype");
 
-	QString path = config->inputFolder() + "/Users/";
+	QString path = config->inputFolder();
 	QStringList  listOfSkypeUser;
 
     writerMessagesSkype skypeAccouts (config->outputFolder() + "//skype/accounts.xml");
