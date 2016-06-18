@@ -1,9 +1,9 @@
 {
-    "name": "libcoex-plugin-task-skype-win",
-    "lib": "libcoex-plugin-task-skype-win.so",
-    "project": "coex-plugin-task-skype-win.pro",
+    "name": "libcoex-plugin-task-skype",
+    "lib": "libcoex-plugin-task-skype.so",
+    "project": "coex-plugin-task-skype.pro",
     "description": "Plugin search git repo in system",
-    "repository": "https://github.com/tusur-coex/coex-plugin-task-skypewin",
+    "repository": "https://github.com/tusur-coex/coex-plugin-task-skype",
     "version": {
 		"major": "0",
 		"minor": "1",

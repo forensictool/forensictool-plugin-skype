@@ -12,7 +12,7 @@ VERSION = $${VERSION_MAJOR}.$${VERSION_MINOR}.$${VERSION_BUILD}
 
 
 TEMPLATE = app
-TARGET = coex-skype-win
+TARGET = coex-skype
 DESTDIR = bin/
 OBJECTS_DIR = tmp/
 QT -= gui

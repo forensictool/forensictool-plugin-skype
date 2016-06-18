@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<schema name="skype-win">
+<schema name="skype">
 	<!-- add 20 fields -->
     <field name="account_emails" type="text" indexed="true" stored="true"/>
     <field name="account_fullName" type="text" indexed="true" stored="true"/>

@@ -1,4 +1,4 @@
-# coex-plugin-task-skypewin
+# coex-plugin-task-skype
 A Forensic plug-in for Skype. Just run the application. The program resides in the source directory.
 
 Requirements: Qt5
@@ -13,11 +13,11 @@ Requirements: Qt5
 	
 ### run single app:
 
-	$ ./bin/coex-skype-win 
+	$ ./bin/coex-skype 
 
 	Task is search logs of Skype for WINDOWS
 
-	  Usage: ./bin/coex-skype-win [OPTIONS] 
+	  Usage: ./bin/coex-skype [OPTIONS] 
 
 	  OPTIONS:
 
@@ -28,7 +28,7 @@ Requirements: Qt5
 	  Version: 0.1.0
 	  Author: Igor Polyakov
 
-	$ ./bin/coex-skype-win --input-folder ../coex-testdata/Windows7_Ult/ --output-folder ../output 
+	$ ./bin/coex-skype --input-folder ../coex-testdata/Windows7_Ult/ --output-folder ../output 
 
 	===============TaskSkypeWin================
 

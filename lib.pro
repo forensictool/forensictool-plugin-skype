@@ -12,7 +12,7 @@ VERSION = $${VERSION_MAJOR}.$${VERSION_MINOR}.$${VERSION_BUILD}
 
 
 TEMPLATE = lib
-TARGET = coex-plugin-task-skypewin
+TARGET = coex-plugin-task-skype
 DESTDIR = bin/
 OBJECTS_DIR = tmp/
 QT -= gui
