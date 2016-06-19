@@ -46,7 +46,6 @@ bool TaskSkypeWin::execute(const coex::IConfig *config) {
     dir.mkdir("skype");
 
 	QString path = config->inputFolder();
-	QStringList  listOfSkypeUser;
 
     writerMessagesSkype skypeAccouts (config->outputFolder() + "//skype/accounts.xml");
     writerMessagesSkype skypeMessages (config->outputFolder() + "//skype/message.xml");
@@ -60,28 +59,29 @@ bool TaskSkypeWin::execute(const coex::IConfig *config) {
     QRegExp skypePathLog(".*Skype.*main.db");
     QDirIterator dirPath (path, QDir::Files | QDir::NoSymLinks | QDir::Hidden | QDir::System | QDir::AllEntries, QDirIterator::Subdirectories);
 
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "skype_sqlite_db");
 
 	while(dirPath.hasNext())
 	{
 		if (dirPath.next().contains(skypePathLog))
 		{
 			QString qwerty = skypePathLog.cap(0);
-            if(m_bDebug)
-                std::cout << "\n :: " <<qwerty.toStdString();
-			listOfSkypeUser << skypePathLog.cap(0);
-
             path = dirPath.filePath();
-            if(!QFile::exists(path))
-                return false;
-            QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "skype_sqlite_db");
+            QFileInfo f(path);
+            QString test = f.fileName();
+            if(test != "main.db")
+                continue;
+            if(m_bDebug)
+                std::cout << "Found database :: " << qwerty.toStdString() << "\n";
+
             db.setDatabaseName(path);
             if( !db.open() )
             {
                 if(m_bDebug)
-                    std::cout << "Not connected!" << /*db.lastError() <<*/ "\n\n";
+                    std::cout << "Not connected!";// << db.lastError() << "\n";
             }
             if(m_bDebug)
-                std::cout << "Connected!\n\n";
+                std::cout << "Connected!\n";
             /*QStringList listOfTables;
             listOfTables << "DbMeta" << "Contacts" << "LegacyMessages" <<  "Calls"
                 << "Accounts" << "Transfers" << "Voicemails" << "Chats"
