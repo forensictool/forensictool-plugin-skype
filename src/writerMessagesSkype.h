@@ -37,7 +37,7 @@ public:
         QString current_video_audience
     );
 
-    void writeContacts(
+    void writeContacts(QString account,
         QString skypename ,
         QString fullName,
         QString birthday,

@@ -32,6 +32,7 @@ class TaskSkypeWin : coex::ITask
 		virtual bool execute(const coex::IConfig *config);
 	private:
 		bool m_bDebug;
+        QString account;
 };
 
 extern "C"

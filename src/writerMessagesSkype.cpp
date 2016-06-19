@@ -105,6 +105,7 @@ void writerMessagesSkype::writeCalls(
 
 // like skype contact
 void writerMessagesSkype::writeContacts(
+        QString account,
         QString skypename,
         QString fullName,
         QString birthday,
@@ -130,6 +131,7 @@ void writerMessagesSkype::writeContacts(
     writeSkype_field("doc_type", "contact");
     writeSkype_field("id", "skype_"+ md5Id);
     writeSkype_field("application", "skype");
+    writeSkype_field("parent_account", account);
     writeSkype_field("contact_name", skypename);
     writeSkype_field("contact_fullName", fullName);
     writeSkype_field("contact_birthday", birthday);

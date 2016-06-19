@@ -95,11 +95,11 @@ bool TaskSkypeWin::execute(const coex::IConfig *config) {
                 while (query.next())
                 {
                     QSqlRecord rec = query.record();
-                    QString skypename = query.value(rec.indexOf("skypename")).toString();
+                    account = query.value(rec.indexOf("skypename")).toString();
                     QString fullName = query.value(rec.indexOf("fullName")).toString();
                     QString emails = query.value(rec.indexOf("emails")).toString();
                     QString ipcountry = query.value(rec.indexOf("ipcountry")).toString();
-                    skypeAccouts.writeInfo(skypename,fullName,emails,ipcountry);
+                    skypeAccouts.writeInfo(account,fullName,emails,ipcountry);
                 }
             }
             else {
@@ -119,7 +119,7 @@ bool TaskSkypeWin::execute(const coex::IConfig *config) {
                     QString languages = query.value(rec.indexOf("languages")).toString();
                     QString country = query.value(rec.indexOf("country")).toString();
                     QString city = query.value(rec.indexOf("city")).toString();
-                    skypeContacts.writeContacts(skypename,fullName,birthday,gender,phone_mobile,languages,country,city);
+                    skypeContacts.writeContacts(account, skypename,fullName,birthday,gender,phone_mobile,languages,country,city);
                 }
             } else {
                 if(m_bDebug)
