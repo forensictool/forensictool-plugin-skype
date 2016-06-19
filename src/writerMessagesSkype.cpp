@@ -8,7 +8,7 @@ writerMessagesSkype::writerMessagesSkype(
 {
     m_bOpened = true;
     m_pFile= new QFile(fileType);
-    if (!m_pFile->open(QIODevice::Append))
+    if (!m_pFile->open(QIODevice::ReadWrite))
     {
         m_bOpened = false;
         return;
