@@ -57,8 +57,8 @@ bool TaskSkypeWin::execute(const coex::IConfig *config) {
         qDebug() << "Failed task :: Can't create output folder & files\n";
         return false;
     }
-	QRegExp skypePathLog(".*Skype.*main.db");
-	QDirIterator dirPath (path, QDir::Files | QDir::NoSymLinks, QDirIterator::Subdirectories);
+    QRegExp skypePathLog(".*Skype.*main.db");
+    QDirIterator dirPath (path, QDir::Files | QDir::NoSymLinks | QDir::Hidden | QDir::System | QDir::AllEntries, QDirIterator::Subdirectories);
 
 
 	while(dirPath.hasNext())
