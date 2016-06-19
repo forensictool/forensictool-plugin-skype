@@ -1,56 +1,63 @@
 #include "task.h"
 #include "writerMessagesSkype.h"
 #include <QString>
+#include <iostream>
 
-TaskSkypeWin::TaskSkypeWin() {
+TaskSkype::TaskSkype() {
 	m_bDebug = false;
 };
 
-QString TaskSkypeWin::help() {
+QString TaskSkype::help() {
 	return "\t--debug - viewing debug messages";
 };
 
-QString TaskSkypeWin::name() {
-	return "SkypeWin";
+QString TaskSkype::name() {
+	return "Skype";
 };
 
-QString TaskSkypeWin::author() {
+QString TaskSkype::author() {
 	return "Igor Polyakov";
 };
 
-QString TaskSkypeWin::description() {
-	return "Task is search logs of Skype for WINDOWS";
+QString TaskSkype::description() {
+	return "Task is search logs of Skype";
 };
 
-bool TaskSkypeWin::isSupportOS(const coex::ITypeOperationSystem *) {
+QString TaskSkype::license() {
+	return "MIT License";
+};
+
+QString TaskSkype::licenseFull() {
+	return "Look here: https://raw.githubusercontent.com/tusur-coex/coex-plugin-task-skype/master/LICENSE";
+};
+
+bool TaskSkype::isSupportOS(const coex::ITypeOperationSystem *) {
     return true;
 };
 
-void TaskSkypeWin::setOption(QStringList options) {
-	/*
-	* 
-	* */
-	if(options.contains("--debug"))
-	m_bDebug = true;
+bool TaskSkype::init(const coex::IConfig *pConfig){
+	m_pConfig = pConfig;
+	m_bDebug = pConfig->isDebugEnabled();
+	return true;
 };
 
-bool TaskSkypeWin::execute(const coex::IConfig *config) {
+bool TaskSkype::execute() {
 	// example usage options
     if (m_bDebug) {
-        qDebug() << "===============TaskSkypeWin================\n\n";
+        qDebug() << "===============TaskSkype================\n\n";
         qDebug() << "Debug mode ON\n";
-        qDebug() << "InputFolder: " << config->inputFolder() << "\n";
+        qDebug() << "InputFolder: " << m_pConfig->inputFolder() << "\n";
     };
 
-    QDir dir(config->outputFolder());
+    QDir dir(m_pConfig->outputFolder());
     dir.mkdir("skype");
 
-	QString path = config->inputFolder();
+	QString path = m_pConfig->inputFolder();
 
-    writerMessagesSkype skypeAccouts (config->outputFolder() + "//skype/accounts.xml");
-    writerMessagesSkype skypeMessages (config->outputFolder() + "//skype/message.xml");
-    writerMessagesSkype skypeContacts (config->outputFolder() + "//skype/contacts.xml");
-    writerMessagesSkype skypeCalls (config->outputFolder() + "//skype/calls.xml");
+    writerMessagesSkype skypeAccouts (m_pConfig->outputFolder() + "//skype/accounts.xml");
+    writerMessagesSkype skypeMessages (m_pConfig->outputFolder() + "//skype/message.xml");
+    writerMessagesSkype skypeContacts (m_pConfig->outputFolder() + "//skype/contacts.xml");
+    writerMessagesSkype skypeCalls (m_pConfig->outputFolder() + "//skype/calls.xml");
     if(!skypeMessages.opened()||!skypeContacts.opened()||!skypeAccouts.opened()||!skypeCalls.opened())
     {
         qDebug() << "Failed task :: Can't create output folder & files\n";

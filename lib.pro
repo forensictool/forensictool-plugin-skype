@@ -1,15 +1,4 @@
-#.pro file
-#Application version
-VERSION_MAJOR = 0
-VERSION_MINOR = 1
-VERSION_BUILD = 0
-
-DEFINES += "VERSION_MAJOR=$$VERSION_MAJOR"\
-       "VERSION_MINOR=$$VERSION_MINOR"\
-       "VERSION_BUILD=$$VERSION_BUILD"
-
-VERSION = $${VERSION_MAJOR}.$${VERSION_MINOR}.$${VERSION_BUILD}
-
+include(version.pri)
 
 TEMPLATE = lib
 TARGET = coex-plugin-task-skype
@@ -18,6 +7,9 @@ OBJECTS_DIR = tmp/
 QT -= gui
 QT += sql
 CONFIG += dll
+
+INCLUDEPATH += src/coex/v0.2.2/interfaces/
+
 SOURCES += \
 	src/lib.cpp \
 	src/task.cpp \

@@ -1,5 +1,5 @@
-#ifndef __SKYPE_WIN_TASK_H__
-#define __SKYPE_WIN_TASK_H__
+#ifndef __COEX_TASK_SKYPE_H__
+#define __COEX_TASK_SKYPE_H__
 
 #include "coex.h"
 
@@ -18,21 +18,24 @@
 #include <QXmlStreamReader>
 #include <QXmlStreamWriter>
 
-class TaskSkypeWin : coex::ITask
+class TaskSkype : coex::ITask
 {
 	public:
-		TaskSkypeWin();
+		TaskSkype();
 		virtual QString help();
 		virtual QString name();
 		virtual QString author();
 		virtual QString description();
+		virtual QString license();
+		virtual QString licenseFull();
 
 		virtual bool isSupportOS(const coex::ITypeOperationSystem *os);
-		virtual void setOption(QStringList options);
-		virtual bool execute(const coex::IConfig *config);
+		virtual bool init(const coex::IConfig *config);
+		virtual bool execute();
 	private:
 		bool m_bDebug;
         QString account;
+        const coex::IConfig *m_pConfig;
 };
 
 extern "C"
@@ -40,4 +43,4 @@ extern "C"
 	coex::ITask* createTask();
 }
 
-#endif // __SKYPE_WIN_TASK_H__
+#endif // __COEX_TASK_SKYPE_H__

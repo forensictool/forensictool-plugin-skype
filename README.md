@@ -21,16 +21,16 @@ Requirements: Qt5
 
 	  OPTIONS:
 
-		--input-folder <fullpath>       - required parameter
-		--output-folder <fullpath>      - required parameter
-		--help                          - this help
+		-i <fullpath>      - Input folder, required parameter
+		-o <fullpath>      - Output folder, required parameter
+		-h/--help          - this help
 	  
 	  Version: 0.1.0
 	  Author: Igor Polyakov
 
 	$ ./bin/coex-skype --input-folder ../coex-testdata/Windows7_Ult/ --output-folder ../output 
 
-	===============TaskSkypeWin================
+	===============TaskSkype================
 
 
 	Debug mode ON

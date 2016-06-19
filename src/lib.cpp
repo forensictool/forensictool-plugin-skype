@@ -1,6 +1,6 @@
 #include "task.h"
 
 coex::ITask* createTask() {
-	return (coex::ITask*)(new TaskSkypeWin());
+	return (coex::ITask*)(new TaskSkype());
 }
 

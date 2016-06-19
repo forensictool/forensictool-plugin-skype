@@ -1,17 +1,25 @@
 {
-    "name": "libcoex-plugin-task-skype",
-    "lib": "libcoex-plugin-task-skype.so",
-    "project": "coex-plugin-task-skype.pro",
-    "description": "Plugin search git repo in system",
-    "repository": "https://github.com/tusur-coex/coex-plugin-task-skype",
-    "version": {
-		"major": "0",
-		"minor": "1",
-		"build": "0"
-	},
-    "maintainer": {
+	"repository": "https://github.com/tusur-coex/coex-plugin-task-skype.git",
+	"maintainer": {
 		"name": "Igor Polyakov",
 		"email": "fox.user.3@gmail.com"
 	},
-	"architecture": "amd64"
+	"developers": [
+		"Igor Polyakov <fox.user.3@gmail.com>"
+	],
+	"build" : [
+		{
+			"type": "lib",
+			"name": "libcoex-plugin-task-skype",
+			"project": "lib.pro",
+			"lib": "libcoex-plugin-task-searchgitrepo.so",
+			"description": "Collect a list of contacts, users correspondence, information about calls and chats"
+		},
+		{
+			"type": "app",
+			"name": "coex-skype",
+			"project": "app.pro",
+			"description": "The Console Application. Collect a list of contacts, users correspondence, information about calls and chats"
+		}
+	]
 }

@@ -1,15 +1,4 @@
-#.pro file
-#Application version
-VERSION_MAJOR = 0
-VERSION_MINOR = 1
-VERSION_BUILD = 0
-
-DEFINES += "VERSION_MAJOR=$$VERSION_MAJOR"\
-       "VERSION_MINOR=$$VERSION_MINOR"\
-       "VERSION_BUILD=$$VERSION_BUILD"
-
-VERSION = $${VERSION_MAJOR}.$${VERSION_MINOR}.$${VERSION_BUILD}
-
+include(version.pri)
 
 TEMPLATE = app
 TARGET = coex-skype
@@ -18,15 +7,22 @@ OBJECTS_DIR = tmp/
 QT -= gui
 QT += sql
 CONFIG += dll
+
+INCLUDEPATH += src/coex/v0.2.2/interfaces/
+
 SOURCES += \
-	src/app.cpp\
+	src/app.cpp \
 	src/task.cpp \
 	src/writerMessagesSkype.cpp \
+	src/coex/v0.2.2/helpers/config.cpp \
+	src/coex/v0.2.2/helpers/typeos.cpp \
+
 
 HEADERS += \
-	src/coex.h \
 	src/task.h \
 	src/writerMessagesSkype.h \
+	src/coex/v0.2.2/helpers/config.h \
+	src/coex/v0.2.2/helpers/typeos.h \
 	
 
 
