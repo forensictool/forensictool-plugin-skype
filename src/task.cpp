@@ -15,8 +15,10 @@ QString TaskSkype::name() {
 	return "Skype";
 };
 
-QString TaskSkype::author() {
-	return "Igor Polyakov";
+QStringList TaskSkype::authors() {
+	QStringList listAuthors;
+	listAuthors << "Igor Polyakov";
+	return listAuthors;
 };
 
 QString TaskSkype::description() {
@@ -28,14 +30,14 @@ QString TaskSkype::license() {
 };
 
 QString TaskSkype::licenseFull() {
-	return "Look here: https://raw.githubusercontent.com/tusur-coex/coex-plugin-task-skype/master/LICENSE";
+	return "Look here: http://forensictool.su/#LICENSE";
 };
 
-bool TaskSkype::isSupportOS(const coex::ITypeOperationSystem *) {
+bool TaskSkype::isSupportOS(const forensictool::ITypeOperationSystem *) {
     return true;
 };
 
-bool TaskSkype::init(const coex::IConfig *pConfig){
+bool TaskSkype::init(const forensictool::IConfig *pConfig){
 	m_pConfig = pConfig;
 	m_bDebug = pConfig->isDebugEnabled();
 	return true;

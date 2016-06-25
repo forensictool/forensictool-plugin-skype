@@ -1,14 +1,14 @@
 include(version.pri)
 
 TEMPLATE = lib
-TARGET = coex-plugin-task-skype
+TARGET = forensictool-plugin-skype
 DESTDIR = bin/
 OBJECTS_DIR = tmp/
 QT -= gui
 QT += sql
 CONFIG += dll
 
-INCLUDEPATH += src/coex/v0.2.2/interfaces/
+INCLUDEPATH += src/forensictool-core/v0.3.1/interfaces/
 
 SOURCES += \
 	src/lib.cpp \
@@ -17,6 +17,5 @@ SOURCES += \
 
 
 HEADERS += \
-	src/coex.h \
 	src/task.h \
 	src/writerMessagesSkype.h \

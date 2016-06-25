@@ -1,7 +1,7 @@
-#ifndef __COEX_TASK_SKYPE_H__
-#define __COEX_TASK_SKYPE_H__
+#ifndef __FORENSICTOOL_TASK_SKYPE_H__
+#define __FORENSICTOOL_TASK_SKYPE_H__
 
-#include "coex.h"
+#include "forensictool.h"
 
 #include <QDebug>
 #include <QDateTime>
@@ -18,29 +18,29 @@
 #include <QXmlStreamReader>
 #include <QXmlStreamWriter>
 
-class TaskSkype : coex::ITask
+class TaskSkype : forensictool::ITask
 {
 	public:
 		TaskSkype();
 		virtual QString help();
 		virtual QString name();
-		virtual QString author();
+		virtual QStringList authors();
 		virtual QString description();
 		virtual QString license();
 		virtual QString licenseFull();
 
-		virtual bool isSupportOS(const coex::ITypeOperationSystem *os);
-		virtual bool init(const coex::IConfig *config);
+		virtual bool isSupportOS(const forensictool::ITypeOperationSystem *os);
+		virtual bool init(const forensictool::IConfig *config);
 		virtual bool execute();
 	private:
 		bool m_bDebug;
         QString account;
-        const coex::IConfig *m_pConfig;
+        const forensictool::IConfig *m_pConfig;
 };
 
 extern "C"
 {
-	coex::ITask* createTask();
+	forensictool::ITask* createTask();
 }
 
-#endif // __COEX_TASK_SKYPE_H__
+#endif // __FORENSICTOOL_TASK_SKYPE_H__

@@ -1,5 +1,5 @@
 {
-	"repository": "https://github.com/tusur-coex/coex-plugin-task-skype.git",
+	"repository": "https://github.com/forensictool/forensictool-plugin-skype.git",
 	"maintainer": {
 		"name": "Igor Polyakov",
 		"email": "fox.user.3@gmail.com"
@@ -10,14 +10,13 @@
 	"build" : [
 		{
 			"type": "lib",
-			"name": "libcoex-plugin-task-skype",
+			"name": "libforensictool-plugin-skype",
 			"project": "lib.pro",
-			"lib": "libcoex-plugin-task-searchgitrepo.so",
 			"description": "Collect a list of contacts, users correspondence, information about calls and chats"
 		},
 		{
 			"type": "app",
-			"name": "coex-skype",
+			"name": "forensictool-skype",
 			"project": "app.pro",
 			"description": "The Console Application. Collect a list of contacts, users correspondence, information about calls and chats"
 		}

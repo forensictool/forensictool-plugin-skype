@@ -1,9 +1,9 @@
-# coex-plugin-task-skype
-A Forensic plug-in for Skype. Just run the application. The program resides in the source directory.
+# forensictool-plugin-skype
+A Skype plug-in for forensictool. Just run the application. The program resides in the source directory.
 
 Requirements: Qt5
 
-## Build plugin for coex:
+## Build plugin for forensictool:
 	
 	$ ./build_lib.sh
 
@@ -13,11 +13,11 @@ Requirements: Qt5
 	
 ### run single app:
 
-	$ ./bin/coex-skype 
+	$ ./bin/forensictool-skype 
 
 	Task is search logs of Skype for WINDOWS
 
-	  Usage: ./bin/coex-skype [OPTIONS] 
+	  Usage: ./bin/forensictool-skype [OPTIONS] 
 
 	  OPTIONS:
 
@@ -25,17 +25,17 @@ Requirements: Qt5
 		-o <fullpath>      - Output folder, required parameter
 		-h/--help          - this help
 	  
-	  Version: 0.1.0
+	  Version: 0.3.0
 	  Author: Igor Polyakov
 
-	$ ./bin/coex-skype --input-folder ../coex-testdata/Windows7_Ult/ --output-folder ../output 
+	$ ./bin/forensictool-skype -i ../forensictool-testdata/Windows7_Ult/ -o ../output 
 
 	===============TaskSkype================
 
 
 	Debug mode ON
 
-	InputFolder:  "../coex-testdata/Windows7_Ult/" 
+	InputFolder:  "../forensictool-testdata/Windows7_Ult/" 
 
 
-	 :: ../coex-testdata/Windows7_Ult//Users/UserVlad/AppData/Roaming/Skype/fox.user.3/main.dbConnected!
+	 :: ../forensictool-testdata/Windows7_Ult/Users/UserVlad/AppData/Roaming/Skype/fox.user.3/main.dbConnected!

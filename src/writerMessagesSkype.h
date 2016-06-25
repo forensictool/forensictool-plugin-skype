@@ -1,8 +1,6 @@
 #ifndef __WRITER_MESSAGES_SKYPE_H__
 #define __WRITER_MESSAGES_SKYPE_H__
 
-#include "coex.h"
-
 #include <QCryptographicHash>
 #include <QDateTime>
 #include <QFile>
